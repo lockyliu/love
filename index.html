@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				****************以此纪念刘洋和滕雅婷相恋1000天纪念日****************<br />
+				- 相遇 -<br />
+				2014年6月的某一天，我们的相遇：北航羽毛球馆，闷热的天气，却是个美丽的日子！<br />
+				- 相识 -<br />
+				2014年6月-7月，我们的相识：你是我可爱的“小师妹”<br />
+				- 相知 -<br />
+				2014年那个夏天，我们的相知：一起唱歌，买轴承，吃你爱的拌饭和我爱的呷哺...<br />
+				- 相爱 -<br />
+				2014年9月12日，我们的相爱：这一天，是我们在一起的第一天。夜色下，我在大运村的树下亲吻了你，我在心里对你说：要对你好<br />
+				<br />
+				2017年6月8日，我们已经相爱1000天。有话对你说：未来的无数个1000天里，我要一直牵着老婆的手，带着她逛街，逛超市，吃饭，带着她去到世界各地。两个人在一起，就仿佛拥有了全世界，这大概是最幸福的感觉了。<br />
+				<br />
+				<br />
+				<br />
+				让我们一起期许，在未来的某一天里，一起携手，许下这一生的诺言，直至永远！
+				<br />
+				<br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						雅婷老婆，我们已经相爱
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						要永远爱你.<br/>
+						<div class="signature">- 爱你的洋洋老公</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2014, 8, 12);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
